@@ -28,5 +28,5 @@ jobs:
       - name: Run CodeceptJS tests (headless)
         env:
           HEADLESS: true
-          CI: true   # ✅ ngăn không cho vào interactive shell
-        run: npx codeceptjs run --grep "ai: test ai features" --plugins allure
+          CI: true
+        run: npx codeceptjs run --plugins allure
