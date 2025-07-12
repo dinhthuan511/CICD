@@ -25,5 +25,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: Run CodeceptJS tests
+      - name: Run CodeceptJS tests (headless)
+        env:
+          HEADLESS: true  # ✅ Bật headless thông qua biến môi trường
         run: npx codeceptjs run --plugins allure
