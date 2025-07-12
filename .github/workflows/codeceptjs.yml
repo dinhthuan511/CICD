@@ -2,28 +2,28 @@ name: E2E Tests with CodeceptJS + Playwright
 
 on:
   push:
-    branches: [main]
+    branches: [ "main" ]
   pull_request:
-    branches: [main]
+    branches: [ "main" ]
 
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ✅ Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: 🧰 Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
-      - name: 📦 Install dependencies
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
-      - name: 🌐 Install Playwright browsers
+      - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - name: 🚀 Run CodeceptJS tests
-        run: npx codeceptjs run --steps
+      - name: Run CodeceptJS tests
+        run: npx codeceptjs run --plugins allure
