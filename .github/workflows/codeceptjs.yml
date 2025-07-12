@@ -26,6 +26,4 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run CodeceptJS tests (headless)
-        env:
-          HEADLESS: true  # ✅ Bật headless thông qua biến môi trường
-        run: npx codeceptjs run --plugins allure
+        run: HEADLESS=true npx codeceptjs run --plugins allure
