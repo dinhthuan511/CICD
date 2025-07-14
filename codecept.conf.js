@@ -1,16 +1,3 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
-
-// 🧠 Tự động bật headless nếu biến môi trường HEADLESS=true (dành cho CI/CD)
-setHeadlessWhen(process.env.HEADLESS);
-
-// Bật các plugin chung của CodeceptJS (như retry, step-by-step report, screenshot on fail,...)
-setCommonPlugins();
-
-// Tải biến môi trường từ .env nếu có
-require('dotenv').config();
-require('./heal');
-
-/** @type {CodeceptJS.MainConfig} */
 exports.config = {
   tests: './*_test.js',
   output: './output',
@@ -18,8 +5,8 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'https://getbootstrap.com/docs/5.2/examples/checkout/',
-      show: false,        
-      headless: true      
+      show: false,
+      headless: true
     },
     AI: {}
   },
@@ -27,7 +14,8 @@ exports.config = {
     I: './steps_file.js'
   },
 
-  // Cấu hình AI: dùng Groq (Mistral)
+  interactive: process.env.CI !== 'true', // ✅ Tự động TẮT interactive trong CI/CD
+
   ai: {
     request: async messages => {
       const Groq = require('groq-sdk');
@@ -49,7 +37,6 @@ exports.config = {
       healSteps: true,
       reportHealed: true
     }
-    // Tạm thời comment out allure plugin
     // allure: {
     //   enabled: true,
     //   require: 'allure-codeceptjs'
