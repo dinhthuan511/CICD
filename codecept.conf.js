@@ -1,4 +1,6 @@
 // file: codecept.conf.js
+process.env.CI = 'true';
+
 exports.config = {
   tests: './*_test.js',
   output: './output',

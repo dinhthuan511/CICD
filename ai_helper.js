@@ -1,23 +1,17 @@
-// ai_helper.js
-const Helper = require('@codeceptjs/helper');
+const { helper } = require('codeceptjs');
 const Groq = require('groq-sdk');
 
-class AIHelper extends Helper {
-  async _sendRequest(messages) {
-    const client = new Groq({
-      apiKey: process.env.GROQ_API_KEY,
-    });
-
-    const chatCompletion = await client.chat.completions.create({
-      messages,
-      model: 'mistral-saba-24b',
-    });
-
-    return chatCompletion.choices[0]?.message?.content || '';
+class AIHelper extends helper {
+  async _before() {
+    this.client = new Groq({ apiKey: process.env.GROQ_API_KEY });
   }
 
-  async makeAiRequest(messages) {
-    return await this._sendRequest(messages);
+  async ask(prompt) {
+    const completion = await this.client.chat.completions.create({
+      model: 'mistral-saba-24b',
+      messages: [{ role: 'user', content: prompt }],
+    });
+    return completion.choices[0]?.message?.content || '';
   }
 }
 
