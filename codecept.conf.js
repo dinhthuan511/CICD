@@ -14,9 +14,8 @@ exports.config = {
     I: './steps_file.js'
   },
 
-  interactive: process.env.CI !== 'true', // ✅ Tự động TẮT interactive trong CI/CD
-
   ai: {
+    interactive: process.env.CI !== 'true', // ✅ đúng chỗ
     request: async messages => {
       const Groq = require('groq-sdk');
       const client = new Groq({
