@@ -8,23 +8,12 @@ exports.config = {
       show: false,
       headless: true
     },
-    AI: {}
+    AIHelper: {
+      require: './ai_helper.js'
+    }
   },
   include: {
     I: './steps_file.js'
-  },
-  ai: {
-    request: async messages => {
-      const Groq = require('groq-sdk');
-      const client = new Groq({
-        apiKey: process.env.GROQ_API_KEY,
-      });
-      const chatCompletion = await client.chat.completions.create({
-        messages,
-        model: 'mistral-saba-24b',
-      });
-      return chatCompletion.choices[0]?.message?.content || '';
-    }
   },
   plugins: {
     heal: {
