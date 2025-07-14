@@ -14,7 +14,7 @@ exports.config = {
     I: './steps_file.js'
   },
 
-  // ✅ Di chuyển ra đây
+  // ✅ Tắt interactive shell khi CI=true
   interactive: process.env.CI !== 'true',
 
   ai: {
