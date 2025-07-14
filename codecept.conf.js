@@ -18,8 +18,8 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'https://getbootstrap.com/docs/5.2/examples/checkout/',
-      show: false,        // ❗ BẮT BUỘC phải false để dùng headless khi CI
-      headless: true      // ❗ Đảm bảo không crash trong môi trường GitHub Actions
+      show: false,        
+      headless: true      
     },
     AI: {}
   },

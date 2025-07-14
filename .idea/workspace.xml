@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fa9170b3-700e-4f76-8a78-beb00cfbabf3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/codeceptjs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/codeceptjs.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codecept.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/codecept.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/Fill_out_the_complete_checkout_form.failed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/checkoutPage-1750082667336.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steps.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/steps_file.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ai_features_test.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2zrcubJO60NwsbOedI4Vg6MWim0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/lenguyencongnghia/Workspace/swt-ai-test"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa9170b3-700e-4f76-8a78-beb00cfbabf3" name="Changes" comment="" />
+      <created>1752492855799</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752492855799</updated>
+    </task>
+    <servers />
+  </component>
+</project>
