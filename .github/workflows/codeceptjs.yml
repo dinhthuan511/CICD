@@ -36,10 +36,11 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run CodeceptJS tests (headless)
+      - name: Run CodeceptJS tests (headless, AI non-interactive)
         env:
           HEADLESS: 'true'
           CI: 'true'
+          CODECEPT_AI_INTERACTIVE: 'false' # ✅ ép tắt interactive mode
         run: |
           npx codeceptjs run --grep 'ai: test ai features'
 
