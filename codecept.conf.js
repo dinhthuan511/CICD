@@ -1,9 +1,12 @@
 // file: codecept.conf.js
-process.env.CI = 'true';
+
+require('dotenv').config(); // Load biến môi trường từ .env nếu chạy local
+process.env.CI = 'true'; // Đảm bảo CI được set trong môi trường
 
 exports.config = {
   tests: './*_test.js',
   output: './output',
+
   helpers: {
     Playwright: {
       browser: 'chromium',
@@ -15,9 +18,11 @@ exports.config = {
       require: './ai_helper.js'
     }
   },
+
   include: {
     I: './steps_file.js'
   },
+
   plugins: {
     heal: {
       enabled: true,
@@ -26,8 +31,9 @@ exports.config = {
       reportHealed: true
     },
     ai: {
-      enabled: false //Tắt hoàn toàn AI plugin mặc định
+      enabled: false // Tắt plugin AI mặc định của CodeceptJS nếu bạn dùng helper riêng
     }
   },
+
   name: 'codecept3'
 };
