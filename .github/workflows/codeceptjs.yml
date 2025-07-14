@@ -28,21 +28,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install missing packages (dotenv, groq-sdk, codeceptjs config plugin)
+      - name: Install missing packages
         run: |
           npm install dotenv groq-sdk --save
-          npm install @codeceptjs/configure --save-dev
-          npm install playwright --save-dev
+          npm install @codeceptjs/configure playwright --save-dev
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run CodeceptJS tests (headless, non-interactive)
+      - name: Run CodeceptJS tests (headless)
         env:
           HEADLESS: 'true'
           CI: 'true'
         run: |
-          npx codeceptjs run --grep 'ai: test ai features' --ai-interactive=false
+          npx codeceptjs run --grep 'ai: test ai features'
 
       - name: Upload test results
         uses: actions/upload-artifact@v4

@@ -14,7 +14,7 @@ exports.config = {
     I: './steps_file.js'
   },
 
-  // ✅ Tắt interactive shell khi CI=true
+  // ✅ Tự động tắt chế độ interactive khi chạy trong CI/CD
   interactive: process.env.CI !== 'true',
 
   ai: {
