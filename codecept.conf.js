@@ -13,9 +13,7 @@ exports.config = {
   include: {
     I: './steps_file.js'
   },
-
   ai: {
-    interactive: process.env.CI !== 'true', // ✅ Đặt đúng bên trong `ai`
     request: async messages => {
       const Groq = require('groq-sdk');
       const client = new Groq({
@@ -28,7 +26,6 @@ exports.config = {
       return chatCompletion.choices[0]?.message?.content || '';
     }
   },
-
   plugins: {
     heal: {
       enabled: true,
@@ -37,6 +34,5 @@ exports.config = {
       reportHealed: true
     }
   },
-
   name: 'codecept3'
 };
