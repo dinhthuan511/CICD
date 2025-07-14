@@ -21,6 +21,9 @@ exports.config = {
       healElements: true,
       healSteps: true,
       reportHealed: true
+    },
+    ai: {
+      enabled: false // ⛔ Tắt plugin AI mặc định của CodeceptJS
     }
   },
   name: 'codecept3'
