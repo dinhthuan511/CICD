@@ -22,5 +22,8 @@
     "url": "https://github.com/dinhthuan511/CICD/issues"
   },
   "homepage": "https://github.com/dinhthuan511/CICD#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.0"
+  }
 }

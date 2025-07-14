@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es6",              // để hỗ trợ các tính năng như Promise
-    "lib": ["es6", "dom"],        // thêm thư viện có Promise, window, v.v.
     "allowJs": true,
-    "checkJs": true               // nếu bạn muốn báo lỗi JS trong VS Code
+    "moduleResolution": "node",
+    "target": "ES2020",
+    "module": "commonjs",
+    "typeRoots": ["./node_modules/@types"]
   },
-  "include": ["./**/*"]
+  "exclude": ["node_modules"]
 }
