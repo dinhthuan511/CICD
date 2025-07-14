@@ -14,8 +14,10 @@ exports.config = {
     I: './steps_file.js'
   },
 
+  // ✅ Di chuyển ra đây
+  interactive: process.env.CI !== 'true',
+
   ai: {
-    interactive: process.env.CI !== 'true', // ✅ đúng chỗ
     request: async messages => {
       const Groq = require('groq-sdk');
       const client = new Groq({
@@ -36,10 +38,6 @@ exports.config = {
       healSteps: true,
       reportHealed: true
     }
-    // allure: {
-    //   enabled: true,
-    //   require: 'allure-codeceptjs'
-    // }
   },
 
   name: 'codecept3'
