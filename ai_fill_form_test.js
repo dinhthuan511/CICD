@@ -1,6 +1,9 @@
+// file: ai_fill_form_test.js
+const { I } = inject();
+
 Feature('Checkout Form Submission');
 
-Scenario('Fill out the complete checkout form', async ({ I }) => {
+Scenario('Fill out the complete checkout form', async () => {
   I.amOnPage('https://getbootstrap.com/docs/5.2/examples/checkout/');
 
   I.say('Starting to fill out the checkout form...');
