@@ -49,6 +49,11 @@ exports.config = {
       healSteps: true,
       reportHealed: true
     }
+    // Tạm thời comment out allure plugin
+    // allure: {
+    //   enabled: true,
+    //   require: 'allure-codeceptjs'
+    // }
   },
 
   name: 'codecept3'
