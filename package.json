@@ -1,0 +1,24 @@
+{
+  "name": "swt-ai-test",
+  "version": "1.0.0",
+  "main": "ai_fill_form_test.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dinhthuan511/CICD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dinhthuan511/CICD/issues"
+  },
+  "homepage": "https://github.com/dinhthuan511/CICD#readme",
+  "description": ""
+}

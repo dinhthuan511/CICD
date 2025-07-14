@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
-    "allowJs": true
-  }
+    "target": "es6",              // để hỗ trợ các tính năng như Promise
+    "lib": ["es6", "dom"],        // thêm thư viện có Promise, window, v.v.
+    "allowJs": true,
+    "checkJs": true               // nếu bạn muốn báo lỗi JS trong VS Code
+  },
+  "include": ["./**/*"]
 }
