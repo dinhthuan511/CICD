@@ -32,7 +32,8 @@ jobs:
         env:
           HEADLESS: 'true'
           CI: 'true'
-        run: npx codeceptjs run --grep 'ai: test ai features'
+        run: |
+          npx codeceptjs run --grep 'ai: test ai features'
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
