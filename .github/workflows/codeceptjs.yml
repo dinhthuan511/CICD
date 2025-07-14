@@ -10,6 +10,7 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 30  # Giới hạn thời gian job
 
     steps:
       - name: Checkout code
@@ -26,14 +27,13 @@ jobs:
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
- 
+
       - name: Run CodeceptJS tests (headless)
         env:
-           HEADLESS: true
-           CI: true
-           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          HEADLESS: true
+          CI: true
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: npx codeceptjs run --grep "ai: test ai features"
-        timeout-minutes: 30
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -45,8 +45,9 @@ jobs:
             allure-results/
           retention-days: 30
 
-      # - name: Upload Allure results
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: allure-results
-      #     path: output
+      - name: Upload Allure results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: output
