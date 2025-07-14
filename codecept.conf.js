@@ -1,3 +1,4 @@
+// file: codecept.conf.js
 exports.config = {
   tests: './*_test.js',
   output: './output',
@@ -23,7 +24,7 @@ exports.config = {
       reportHealed: true
     },
     ai: {
-      enabled: false // ⛔ Tắt plugin AI mặc định của CodeceptJS
+      enabled: false //Tắt hoàn toàn AI plugin mặc định
     }
   },
   name: 'codecept3'

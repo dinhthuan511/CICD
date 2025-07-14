@@ -1,3 +1,4 @@
+# file: .github/workflows/e2e.yml
 name: E2E Tests with CodeceptJS + Playwright
 
 on:
@@ -40,7 +41,7 @@ jobs:
         env:
           HEADLESS: 'true'
           CI: 'true'
-          CODECEPT_AI_INTERACTIVE: 'false' # ✅ ép tắt interactive mode
+          CODECEPT_AI_INTERACTIVE: 'false'
         run: |
           npx codeceptjs run --grep 'ai: test ai features'
 
