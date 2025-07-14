@@ -10,7 +10,7 @@ on:
 jobs:
   e2e-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # Giới hạn thời gian job
+    timeout-minutes: 30
 
     steps:
       - name: Checkout code
@@ -33,7 +33,7 @@ jobs:
           HEADLESS: true
           CI: true
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-        run: npx codeceptjs run --grep "ai: test ai features"
+        run: npx codeceptjs run --grep 'ai: test ai features'
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
@@ -44,10 +44,3 @@ jobs:
             output/
             allure-results/
           retention-days: 30
-
-      - name: Upload Allure results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: allure-results
-          path: output
