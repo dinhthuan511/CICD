@@ -39,12 +39,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run CodeceptJS tests (headless)
+      - name: Run CodeceptJS tests (headless, non-interactive)
         env:
           HEADLESS: 'true'
           CI: 'true'
         run: |
-          npx codeceptjs run --grep 'ai: test ai features'
+          npx codeceptjs run --grep 'ai: test ai features' --no-interactive
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
