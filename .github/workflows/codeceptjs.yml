@@ -45,8 +45,8 @@ jobs:
             allure-results/
           retention-days: 30
 
-      - name: Upload Allure results
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-results
-          path: output
+      # - name: Upload Allure results
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: allure-results
+      #     path: output
