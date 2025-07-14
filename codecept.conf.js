@@ -4,7 +4,8 @@ require('dotenv').config(); // Load biến môi trường từ .env nếu chạy
 process.env.CI = 'true'; // Đảm bảo CI được set trong môi trường
 
 exports.config = {
-  tests: './*_test.js',
+  // ✅ quét mọi test trong thư mục hiện tại và con
+  tests: '**/*_test.js',
   output: './output',
 
   helpers: {
@@ -31,7 +32,7 @@ exports.config = {
       reportHealed: true
     },
     ai: {
-      enabled: false // Tắt plugin AI mặc định của CodeceptJS nếu bạn dùng helper riêng
+      enabled: false // Tắt plugin AI mặc định nếu dùng helper riêng
     }
   },
 
